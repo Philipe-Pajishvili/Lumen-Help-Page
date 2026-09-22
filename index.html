@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lumen Help — an interactive guide to using Lumen's accessible communication tools.">
+    <title>Lumen Help | Interactive Guide</title>
+    <link rel="icon" type="image/png" href="IMAGES/Lumenfavicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="help.css">
+</head>
+
+<body class="help-page">
+
+<!-- Top Navigation -->
+<header class="help-topbar" id="help-topbar">
+    <a href="https://philipe-pajishvili.github.io/Lumen-Website/" class="help-brand" aria-label="Back to Lumen">
+        <img
+            src="IMAGES/Lumenlogo.png"
+            alt="Lumen"
+            class="help-brand-logo"
+        >
+    </a>
+
+    <div class="help-topbar-actions">
+        <a href="https://philipe-pajishvili.github.io/Lumen-Website/" class="home-link">Back to Website</a>
+    </div>
+</header>
+
+<!-- Search -->
+<div class="search-overlay" id="search-overlay" hidden>
+    <div
+        class="search-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="search-title"
+    >
+        <div class="search-header">
+            <div>
+                <span class="search-label" id="search-title">Lumen Help</span>
+                <input
+                    type="search"
+                    id="help-search"
+                    placeholder="Search Lumen Help…"
+                    autocomplete="off"
+                    aria-label="Search Lumen Help"
+                >
+            </div>
+
+            <button
+                type="button"
+                class="search-close"
+                id="search-close"
+                aria-label="Close search"
+            >
+                ✕
+            </button>
+        </div>
+
+        <ul
+            class="search-results"
+            id="search-results"
+            role="listbox"
+            aria-label="Search results"
+        ></ul>
+    </div>
+</div>
+
+<div class="help-shell">
+
+    <!-- Sidebar Navigation -->
+    <nav class="help-nav" id="help-nav" aria-label="Help sections">
+
+        <div class="nav-header">
+            <h2 class="nav-title">Help</h2>
+        </div>
+
+        <ul class="nav-list">
+            <li>
+                <a href="#getting-started" data-section="getting-started" class="nav-link">
+                    Getting Started
+                </a>
+            </li>
+
+            <li>
+                <a href="#lumenboard" data-section="lumenboard" class="nav-link">
+                    Lumenboard
+                </a>
+            </li>
+
+            <li>
+                <a href="#letters" data-section="letters" class="nav-link">
+                    Letters
+                </a>
+            </li>
+
+            <li>
+                <a href="#presets" data-section="presets" class="nav-link">
+                    Presets
+                </a>
+            </li>
+
+            <li>
+                <a href="#message" data-section="message" class="nav-link">
+                    Message
+                </a>
+            </li>
+
+            <li>
+                <a href="#speech" data-section="speech" class="nav-link">
+                    Speech
+                </a>
+            </li>
+
+            <li>
+                <a href="#gesture" data-section="gesture" class="nav-link">
+                    Gesture Input
+                </a>
+            </li>
+
+            <li>
+                <a href="#camera" data-section="camera" class="nav-link">
+                    Camera
+                </a>
+            </li>
+
+            <li>
+                <a href="#settings" data-section="settings" class="nav-link">
+                    Settings
+                </a>
+            </li>
+
+            <li>
+                <a href="#saved" data-section="saved" class="nav-link">
+                    Saved Phrases
+                </a>
+            </li>
+
+            <li>
+                <a href="#customization" data-section="customization" class="nav-link">
+                    Customization
+                </a>
+            </li>
+
+            <li>
+                <a href="#troubleshooting" data-section="troubleshooting" class="nav-link">
+                    Troubleshooting
+                </a>
+            </li>
+
+            <li>
+                <a href="#privacy" data-section="privacy" class="nav-link">
+                    Privacy
+                </a>
+            </li>
+
+            <li>
+                <a href="#installation" data-section="installation" class="nav-link">
+                    Installation
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Documentation -->
+    <main class="help-main">
+        <div class="docs-stack" id="docs-panel">
+
+            <!-- Getting Started -->
+            <section class="doc-section" id="getting-started">
+                <div class="section-marker"></div>
+
+                <h2>Getting Started</h2>
+
+                <p>
+                    Lumen is an assistive communication application designed
+                    to help people communicate when speaking is difficult.
+                    Messages can be created using the communication board,
+                    keyboard input, or gesture-based controls and then spoken
+                    aloud using speech synthesis.
+                </p>
+
+                <div class="flow-diagram" aria-hidden="true">
+                    <div class="flow-step">Gesture / Button</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">Lumen</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">Message</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step accent">Speech</div>
+                </div>
+
+                <p>
+                    When gesture input is enabled, the
+                    <strong>blue highlight</strong> indicates the currently
+                    selected communication button.
+                    A <strong>Hello</strong> gesture activates the selected
+                    button, while a <strong>Nothing</strong> gesture advances
+                    the selector.
+                </p>
+            </section>
+
+            <!-- Lumenboard -->
+            <section class="doc-section" id="lumenboard">
+                <div class="section-marker"></div>
+
+                <h2>Lumenboard</h2>
+
+                <p>
+                    The Lumenboard is Lumen's primary communication interface.
+                    It organizes frequently used phrases, controls, and
+                    navigation options into an accessible button grid.
+                </p>
+
+                <p>
+                    In <strong>Basic mode</strong>, the board provides
+                    commonly used communication phrases along with access
+                    to Advanced mode, Saved Phrases, and Settings.
+                </p>
+
+                <p>
+                    When gesture input is enabled, the selector moves
+                    through the available buttons and activates the selected
+                    option when the appropriate gesture is detected.
+                </p>
+            </section>
+
+            <!-- Letters -->
+            <section class="doc-section" id="letters">
+                <div class="section-marker"></div>
+
+                <h2>Letters &amp; Spelling</h2>
+
+                <p>
+                    Advanced mode provides access to letter groups for
+                    spelling custom messages.
+                </p>
+
+                <p>
+                    Select a letter group such as
+                    <strong>ABCD</strong>, <strong>EFGH</strong>, or another
+                    available group to access individual letters.
+                    Selecting a letter adds it to the current message.
+                </p>
+
+                <p>
+                    Use <strong>Back</strong> to return to the Advanced
+                    menu.
+                </p>
+            </section>
+
+            <!-- Presets -->
+            <section class="doc-section" id="presets">
+                <div class="section-marker"></div>
+
+                <h2>Preset Phrases</h2>
+
+                <p>
+                    Basic mode includes ready-to-use communication phrases
+                    for common situations.
+                </p>
+
+                <ul class="feature-list">
+                    <li><strong>Hello</strong></li>
+                    <li><strong>Please</strong></li>
+                    <li><strong>Help</strong></li>
+                    <li><strong>Emergency</strong></li>
+                    <li><strong>Bathroom</strong></li>
+                    <li><strong>Turn on TV</strong></li>
+                </ul>
+
+                <p>
+                    Activating a preset phrase sends it directly to speech
+                    output, allowing communication without manually spelling
+                    the message.
+                </p>
+            </section>
+
+            <!-- Message -->
+            <section class="doc-section" id="message">
+                <div class="section-marker"></div>
+
+                <h2>Message Area</h2>
+
+                <p>
+                    The message area displays the text currently being
+                    composed. It is available in Advanced and Saved modes.
+                </p>
+
+                <p>
+                    Use <strong>Space</strong> to add a space,
+                    <strong>Delete</strong> to remove the most recent
+                    character, and <strong>Delete All</strong> to clear
+                    the current message.
+                </p>
+
+                <p>
+                    When available, the message field can also be edited
+                    directly using a keyboard.
+                </p>
+            </section>
+
+            <!-- Speech -->
+            <section class="doc-section" id="speech">
+                <div class="section-marker"></div>
+
+                <h2>Speech Output</h2>
+
+                <p>
+                    Lumen uses browser-based speech synthesis to convert
+                    messages into spoken communication.
+                </p>
+
+                <p>
+                    Activating a supported communication phrase can speak
+                    it immediately. For composed messages, use
+                    <strong>Say</strong> to read the message aloud.
+                </p>
+
+                <p>
+                    Lumen prefers an English voice when one is available.
+                    The status area indicates when speech output is active.
+                </p>
+            </section>
+
+            <!-- Gesture Input -->
+            <section class="doc-section" id="gesture">
+                <div class="section-marker"></div>
+
+                <h2>Gesture Input</h2>
+
+                <p>
+                    Lumen can use a Teachable Machine pose model to provide
+                    hands-free control of the communication interface.
+                </p>
+
+                <ul class="feature-list">
+                    <li>
+                        <strong>Nothing</strong> — advances the selector
+                        to the next available button.
+                    </li>
+
+                    <li>
+                        <strong>Hello</strong> — activates the currently
+                        selected button.
+                    </li>
+                </ul>
+
+                <p>
+                    Gesture detection runs at a configurable interval.
+                    The default interval is five seconds and can be adjusted
+                    through Settings.
+                </p>
+
+                <p>
+                    For reliable recognition, remain clearly visible to the
+                    camera and hold the desired gesture throughout the
+                    detection interval.
+                </p>
+            </section>
+
+            <!-- Camera -->
+            <section class="doc-section" id="camera">
+                <div class="section-marker"></div>
+
+                <h2>Camera Input</h2>
+
+                <p>
+                    The camera provides the video input required for gesture
+                    recognition. Lumen requests camera permission when
+                    gesture functionality is initialized.
+                </p>
+
+                <p>
+                    Recognition generally works best with good lighting,
+                    a clear view of the upper body, and minimal visual
+                    obstruction between the user and the camera.
+                </p>
+            </section>
+
+            <!-- Settings -->
+            <section class="doc-section" id="settings">
+                <div class="section-marker"></div>
+
+                <h2>Settings &amp; Detection Speed</h2>
+
+                <p>
+                    Settings allows you to adjust how frequently Lumen
+                    evaluates gesture input.
+                </p>
+
+                <p>
+                    The detection interval can be configured from
+                    <strong>1 to 10 seconds</strong>.
+                    A shorter interval makes the interface respond more
+                    frequently, while a longer interval provides additional
+                    time to prepare a gesture.
+                </p>
+            </section>
+
+            <!-- Saved Phrases -->
+            <section class="doc-section" id="saved">
+                <div class="section-marker"></div>
+
+                <h2>Saved Phrases</h2>
+
+                <p>
+                    Saved Phrases allows frequently used custom messages
+                    to be stored for future communication.
+                </p>
+
+                <p>
+                    In Advanced mode, compose a message and select
+                    <strong>Save</strong>. The saved phrase will appear
+                    on the Saved board for later use.
+                </p>
+
+                <p>
+                    Saved phrases are stored locally on the device and
+                    remain available after the application is closed.
+                </p>
+            </section>
+
+            <!-- Customization -->
+            <section class="doc-section" id="customization">
+                <div class="section-marker"></div>
+
+                <h2>Customization</h2>
+
+                <p>
+                    Lumen supports custom Teachable Machine pose models,
+                    allowing gesture recognition to be configured for
+                    different users and environments.
+                </p>
+
+                <p>
+                    Enter a Teachable Machine pose model URL and select
+                    <strong>Load Model</strong>.
+                </p>
+
+                <p>
+                    The model must contain exactly two classes named
+                    <strong>Hello</strong> and <strong>Nothing</strong>
+                    for Lumen's gesture controls to operate correctly.
+                </p>
+
+                <p>
+                    Lumen remembers the most recently valid model URL
+                    locally on the device.
+                </p>
+            </section>
+
+            <!-- Troubleshooting -->
+            <section class="doc-section" id="troubleshooting">
+                <div class="section-marker"></div>
+
+                <h2>Troubleshooting</h2>
+
+                <div class="trouble-item">
+                    <h3>Camera isn't working</h3>
+
+                    <p>
+                        Confirm that camera permission has been granted.
+                        Close other applications that may be using the
+                        camera and reload Lumen if necessary.
+                    </p>
+                </div>
+
+                <div class="trouble-item">
+                    <h3>Gesture isn't being detected</h3>
+
+                    <p>
+                        Improve the lighting around you, make sure your
+                        upper body is visible, and hold the gesture for the
+                        full detection interval. If using a custom model,
+                        verify that its classes are named
+                        <strong>Hello</strong> and <strong>Nothing</strong>.
+                    </p>
+                </div>
+
+                <div class="trouble-item">
+                    <h3>Speech isn't playing</h3>
+
+                    <p>
+                        Check your device volume and make sure the browser
+                        tab is not muted. Some browsers require an initial
+                        user interaction before speech synthesis can begin.
+                    </p>
+                </div>
+
+                <div class="trouble-item">
+                    <h3>Buttons aren't responding</h3>
+
+                    <p>
+                        Confirm that Lumen has finished loading and that the
+                        interface is receiving input. If the issue persists,
+                        reload the application and try again.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Privacy -->
+            <section class="doc-section" id="privacy">
+                <div class="section-marker"></div>
+
+                <h2>Privacy &amp; Camera</h2>
+
+                <p>
+                    Lumen requires camera access when gesture recognition
+                    is enabled. Camera video is processed within the browser
+                    for pose detection.
+                </p>
+
+                <p>
+                    Saved phrases and the configured model URL are stored
+                    locally on the device.
+                </p>
+
+                <p>
+                    Camera access is only required for features that use
+                    gesture recognition.
+                </p>
+            </section>
+
+            <!-- Installation -->
+            <section class="doc-section" id="installation">
+                <div class="section-marker"></div>
+
+                <h2>Installation &amp; Launch</h2>
+
+                <p>
+                    Lumen can be accessed directly through the Lumen
+                    website. To begin using gesture-based communication:
+                </p>
+
+                <ol class="install-steps">
+                    <li>Open the Lumen website.</li>
+                    <li>Allow camera access when prompted.</li>
+                    <li>Wait for the gesture recognition model to load.</li>
+                    <li>Position yourself within the camera view.</li>
+                    <li>Use the communication board or gesture controls.</li>
+                </ol>
+
+                <a href="https://philipe-pajishvili.github.io/Lumen-Website/" class="primary-btn launch-btn">
+                    Back to Website
+                </a>
+            </section>
+
+            <!-- Final -->
+            <section class="doc-section final-section" id="ready">
+                <h2>You're ready</h2>
+
+                <p>
+                    You now have the information needed to navigate Lumen,
+                    create messages, use gesture input, and customize the
+                    communication experience.
+                </p>
+
+                <div class="final-actions">
+                    <a href="https://philipe-pajishvili.github.io/Lumen-Website/" class="primary-btn">
+                        Back to Website
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+<!-- Mobile Navigation -->
+<button
+    type="button"
+    class="mobile-nav-toggle"
+    id="mobile-nav-toggle"
+    aria-label="Open navigation"
+    aria-controls="help-nav"
+    aria-expanded="false"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<script src="help.js"></script>
+
+</body>
+</html>

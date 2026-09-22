@@ -1,0 +1,746 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* =====================================================
+   LUMEN DESIGN SYSTEM
+===================================================== */
+
+:root {
+    color-scheme: light;
+
+    --bg: #f5f5fa;
+    --surface: #ffffff;
+    --surface-tint: #f2f4ff;
+
+    --ink: #1b211d;
+    --ink-soft: #565f58;
+    --ink-faint: #868a8f;
+
+    --line: #d8dae2;
+    --line-strong: #c7cad6;
+
+    --accent: #a7afe8;
+    --accent-deep: #6264b3;
+    --accent-soft: rgba(167, 175, 232, 0.16);
+
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 26px;
+
+    --shadow-soft:
+        0 8px 30px rgba(27, 33, 29, 0.05);
+
+    --shadow-card:
+        0 14px 40px rgba(27, 33, 29, 0.07);
+
+    --shadow-hover:
+        0 14px 34px rgba(27, 33, 29, 0.10);
+
+    --transition-fast: 150ms ease;
+    --transition-normal: 220ms ease;
+}
+
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--bg);
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =====================================================
+   PAGE SHELL
+===================================================== */
+
+.page-shell {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+    padding: 24px;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.hero-card,
+.demo-card {
+    width: 100%;
+
+    background: var(--surface);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 42vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    padding: 64px 32px;
+
+    text-align: center;
+}
+
+/* Decorative atmospheric glow */
+
+.hero-glow {
+    position: absolute;
+
+    top: -30%;
+    left: 50%;
+
+    width: min(700px, 80vw);
+    height: min(700px, 80vw);
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(46, 128, 199, 0.24) 0%,
+            rgba(46, 77, 199, 0.08) 45%,
+            rgba(51, 46, 199, 0) 72%
+        );
+
+    pointer-events: none;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.top-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin-bottom: 12px;
+}
+
+.eyebrow {
+    margin: 0;
+
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--accent-deep);
+}
+
+.version-pill {
+    margin: 0;
+    padding: 5px 10px;
+
+    border: 1px solid var(--line);
+    border-radius: 999px;
+
+    background: var(--surface-tint);
+
+    color: var(--ink-soft);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+h1 {
+    font-size: clamp(2.4rem, 5vw, 5rem);
+    line-height: 1.05;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    line-height: 1.15;
+}
+
+h3 {
+    font-size: 1.15rem;
+    line-height: 1.25;
+}
+
+.hero-text {
+    max-width: 680px;
+    margin-top: 4px;
+
+    color: var(--ink-soft);
+
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   LUMEN LOGO
+===================================================== */
+
+.hero-visual {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-visual img {
+    display: block;
+
+    width: min(260px, 45vw);
+    height: auto;
+
+    margin: 0 auto;
+
+    transition:
+        transform var(--transition-normal),
+        filter var(--transition-normal);
+}
+
+.hero-visual img:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   DEMO / APP CARD
+===================================================== */
+
+.demo-card {
+    padding: clamp(20px, 4vw, 40px);
+
+    box-shadow: var(--shadow-card);
+}
+
+.demo-header {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.demo-header h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.demo-header p {
+    color: var(--ink-soft);
+
+    font-size: clamp(0.85rem, 1.4vw, 1rem);
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   APP ROOT
+===================================================== */
+
+#app-root {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+    padding: clamp(16px, 3vw, 32px);
+
+    background: var(--surface-tint);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+}
+
+
+/* =====================================================
+   CANVAS
+===================================================== */
+
+canvas {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+
+    background: #000000;
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   VOICE BUTTON
+===================================================== */
+
+.voice-button {
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 21px;
+
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+
+    background: var(--ink);
+    color: var(--bg);
+
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    letter-spacing: 0.01em;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 14px rgba(27, 33, 29, 0.08);
+
+    transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.voice-button:hover {
+    background: var(--accent-deep);
+    border-color: var(--accent-deep);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.voice-button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 3px 8px rgba(27, 33, 29, 0.08);
+}
+
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
+.home-button {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: var(--accent-deep);
+
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+.home-button:hover {
+    color: var(--ink);
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.home-button:active {
+    color: var(--accent-deep);
+}
+
+
+/* =====================================================
+   COMMUNICATION BOARD
+===================================================== */
+
+.communication-board {
+    width: min(100%, 560px);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin: 0 auto;
+}
+
+.communication-button {
+    width: 100%;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 8px;
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+
+    background: var(--surface);
+    color: var(--ink);
+
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 8px rgba(27, 33, 29, 0.025);
+
+    transition:
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.communication-button:hover {
+    border-color: var(--accent-deep);
+
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(27, 33, 29, 0.06);
+}
+
+.communication-button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 2px 7px rgba(27, 33, 29, 0.04);
+}
+
+.communication-button.active {
+    background: var(--accent);
+    border-color: var(--accent);
+
+    color: var(--ink);
+
+    box-shadow:
+        0 5px 16px rgba(98, 100, 179, 0.12);
+}
+
+
+/* =====================================================
+   ACCESSIBILITY / FOCUS
+===================================================== */
+
+.communication-button:focus-visible,
+.voice-button:focus-visible,
+.home-button:focus-visible {
+    outline: 2px solid var(--accent-deep);
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+    }
+
+    .hero-visual img,
+    .voice-button,
+    .communication-button,
+    .home-button {
+        transition: none;
+    }
+}
+
+
+/* =====================================================
+   TABLETS
+===================================================== */
+
+@media (max-width: 900px) {
+    .page-shell {
+        padding: 18px;
+        gap: 18px;
+    }
+
+    .hero-card {
+        min-height: 38vh;
+        padding: 50px 24px;
+    }
+
+    .hero-visual img {
+        width: min(210px, 45vw);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+
+    .page-shell {
+        width: 100%;
+        min-height: 100vh;
+
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .hero-card,
+    .demo-card {
+        border-radius: 16px;
+    }
+
+    .hero-card {
+        min-height: auto;
+
+        padding: 38px 16px 34px;
+
+        gap: 14px;
+    }
+
+    .hero-copy {
+        max-width: 100%;
+    }
+
+    .hero-visual img {
+        width: min(145px, 45vw);
+    }
+
+    .hero-text {
+        max-width: 100%;
+
+        font-size: 0.88rem;
+        line-height: 1.55;
+    }
+
+    .demo-card {
+        padding: 14px;
+    }
+
+    .demo-header {
+        margin-bottom: 16px;
+    }
+
+    #app-root {
+        padding: 10px;
+        gap: 12px;
+
+        border-radius: 12px;
+    }
+
+    canvas {
+        width: 100%;
+        max-width: 100%;
+        height: auto !important;
+
+        border-radius: 10px;
+    }
+
+    .communication-board {
+        width: 100%;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+    .communication-button {
+        min-height: 48px;
+
+        padding: 8px 4px;
+
+        font-size: 0.75rem;
+
+        border-radius: 9px;
+    }
+
+    .voice-button {
+        width: min(100%, 280px);
+
+        padding: 11px 15px;
+
+        font-size: 0.8rem;
+    }
+
+    .home-button {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+    .page-shell {
+        padding: 7px;
+    }
+
+    .hero-card {
+        padding: 30px 12px;
+    }
+
+    .hero-visual img {
+        width: 110px;
+    }
+
+    .communication-board {
+        gap: 4px;
+    }
+
+    .communication-button {
+        min-height: 43px;
+
+        padding: 6px 2px;
+
+        font-size: 0.67rem;
+    }
+
+    .demo-header h2 {
+        font-size: 1.15rem;
+    }
+
+    .demo-header p {
+        font-size: 0.72rem;
+    }
+}
+

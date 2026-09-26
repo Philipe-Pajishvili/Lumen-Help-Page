@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -358,6 +357,35 @@
                     camera and hold the desired gesture throughout the
                     detection interval.
                 </p>
+
+                <div class="trouble-item" id="default-gesture-model">
+                    <h3>Default Gesture Model</h3>
+
+                    <p>
+                        Lumen's default gesture model is trained around a
+                        simple upper-body gesture:
+                        <strong>left arm raised and held at approximately
+                        a right angle (90°)</strong>.
+                    </p>
+
+                    <p>
+                        The model distinguishes between the
+                        <strong>Hello</strong> and <strong>Nothing</strong>
+                        classes based on this trained pose pattern, and is
+                        intended to recognize the user's left arm position
+                        clearly within the camera frame.
+                    </p>
+
+                    <p>For the best recognition:</p>
+
+                    <ul class="feature-list">
+                        <li>Keep your left arm clearly visible.</li>
+                        <li>Hold the arm at approximately a 90° angle.</li>
+                        <li>Remain positioned within the camera's field of view.</li>
+                        <li>Maintain consistent lighting and positioning.</li>
+                        <li>Hold the gesture throughout the detection interval.</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Camera -->
